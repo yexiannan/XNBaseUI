@@ -1,0 +1,6 @@
+framework module Pods_XNBaseUI_Example {
+  umbrella header "Pods-XNBaseUI_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

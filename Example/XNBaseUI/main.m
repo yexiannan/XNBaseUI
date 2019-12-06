@@ -1,0 +1,17 @@
+//
+//  main.m
+//  XNBaseUI
+//
+//  Created by yexiannan on 12/06/2019.
+//  Copyright (c) 2019 yexiannan. All rights reserved.
+//
+
+@import UIKit;
+#import "XNAppDelegate.h"
+
+int main(int argc, char * argv[])
+{
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([XNAppDelegate class]));
+    }
+}

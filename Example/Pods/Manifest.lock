@@ -1,0 +1,23 @@
+PODS:
+  - XNBaseUI (0.1.0):
+    - XNBaseUtils
+  - XNBaseUtils (0.1.0)
+
+DEPENDENCIES:
+  - XNBaseUI (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - XNBaseUtils
+
+EXTERNAL SOURCES:
+  XNBaseUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XNBaseUI: 5354792dab8d7c8dac189f8d85dacb61443dc48d
+  XNBaseUtils: 4f8854e121bd892c5be4a67fa1de86fc8723a4f3
+
+PODFILE CHECKSUM: 192073d7fdb11ab57feff604cdd979ee49c48dc9
+
+COCOAPODS: 1.8.4
