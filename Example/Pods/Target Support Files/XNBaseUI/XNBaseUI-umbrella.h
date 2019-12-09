@@ -17,6 +17,7 @@
 #import "UIFont+XNFont.h"
 #import "UIImage+XNImage.h"
 #import "UILabel+XNLabel.h"
+#import "UITextField+XNTextField.h"
 #import "UIView+XNView.h"
 #import "UIView+YYAdd.h"
 #import "XNBaseUI.h"

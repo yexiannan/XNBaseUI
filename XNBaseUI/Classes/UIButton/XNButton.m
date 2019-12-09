@@ -286,6 +286,69 @@
 }
 
 #pragma mark - 链式编程
+- (XNButton * _Nonnull (^)(NSString * _Nonnull, UIControlState))title {
+    @weakify(self)
+    return ^(NSString *title, UIControlState state) {
+        @strongify(self)
+        [self setTitle:title forState:state];
+        return self;
+    };
+}
+
+- (XNButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))titleColor {
+    @weakify(self)
+    return ^(UIColor *titleColor, UIControlState state) {
+        @strongify(self)
+        [self setTitleColor:titleColor forState:state];
+        return self;
+    };
+}
+
+- (XNButton *(^)(NSAttributedString *, UIControlState))attributedString {
+    @weakify(self)
+    return ^(NSAttributedString *attributedString, UIControlState state) {
+        @strongify(self)
+        [self setAttributedTitle:attributedString forState:state];
+        return self;
+    };
+}
+
+- (XNButton * _Nonnull (^)(UIFont * _Nonnull))titleFont {
+    @weakify(self)
+    return ^(UIFont *font) {
+        @strongify(self)
+        self.titleLabel.font = font;
+        return self;
+    };
+}
+
+- (XNButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))image {
+    @weakify(self)
+    return ^(UIImage *image, UIControlState state) {
+        @strongify(self)
+        [self setImage:image forState:state];
+        return self;
+    };
+}
+
+- (XNButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))backgroundImage {
+    @weakify(self)
+    return ^(UIImage *backgroundImage, UIControlState state) {
+        @strongify(self)
+        [self setBackgroundImage:backgroundImage forState:state];
+        return self;
+    };
+}
+
+- (XNButton * _Nonnull (^)(id _Nonnull, SEL _Nonnull, UIControlEvents))addTargetAction {
+    @weakify(self)
+    return ^(id target, SEL sel, UIControlEvents state) {
+        @strongify(self)
+        [self addTarget:target action:sel forControlEvents:state];
+        return self;
+    };
+}
+
 - (XNButton * _Nonnull (^)(UIRectEdge))imagePosition {
     @weakify(self)
        return ^(UIRectEdge edg) {
@@ -333,6 +396,15 @@
     return ^(UIColor *titleColor, UIControlState state) {
         @strongify(self)
         [self setTitleColor:titleColor forState:state];
+        return self;
+    };
+}
+
+- (UIButton *(^)(NSAttributedString *, UIControlState))attributedString {
+    @weakify(self)
+    return ^(NSAttributedString *attributedString, UIControlState state) {
+        @strongify(self)
+        [self setAttributedTitle:attributedString forState:state];
         return self;
     };
 }

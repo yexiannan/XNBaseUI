@@ -65,7 +65,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96893F0ABDEA58951DE2C77D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A3BDBEE207BD6C0161500162 /* Pods_XNBaseUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XNBaseUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB439B6C7322C084896AF61B /* XNBaseUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XNBaseUI.podspec; path = ../XNBaseUI.podspec; sourceTree = "<group>"; };
+		BB439B6C7322C084896AF61B /* XNBaseUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XNBaseUI.podspec; path = ../XNBaseUI.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FECA9BD0D1A30E7A50DBFA0B /* Pods-XNBaseUI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNBaseUI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-XNBaseUI_Tests/Pods-XNBaseUI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

@@ -24,6 +24,9 @@
     button.frame = CGRectMake(100, 100, 100, 100);
     [self.view addSubview:button];
 
+    UIButton *btn = [UIButton new];
+    btn.title(@"gg", UIControlStateNormal).titleFont(MFont(16));
+    
 }
 
 - (void)ppp {
