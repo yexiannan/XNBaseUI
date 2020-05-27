@@ -27,6 +27,7 @@
     self.contentEdgeInsets = UIEdgeInsetsMake(1, 0, 1, 0);
     
     self.buttonImagePosition = UIRectEdgeLeft;//默认布局
+    self.touchSize = CGSizeZero;
 }
 
 
@@ -285,8 +286,20 @@
     return button;
 }
 
+#pragma mark - 扩大按钮点击范围
+// 重写此方法将按钮的点击范围扩大
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    CGRect bounds = self.bounds;
+    
+    // 扩大点击区域
+    bounds = CGRectInset(bounds, -self.touchSize.width, -self.touchSize.height);
+    
+    // 若点击的点在新的bounds里面。就返回yes
+    return CGRectContainsPoint(bounds, point);
+}
+
 #pragma mark - 链式编程
-- (XNButton * _Nonnull (^)(NSString * _Nonnull, UIControlState))title {
+- (XNButton * _Nonnull (^)(NSString * _Nonnull, UIControlState))buttonTitle {
     @weakify(self)
     return ^(NSString *title, UIControlState state) {
         @strongify(self)
@@ -295,7 +308,7 @@
     };
 }
 
-- (XNButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))titleColor {
+- (XNButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))buttonTitleColor {
     @weakify(self)
     return ^(UIColor *titleColor, UIControlState state) {
         @strongify(self)
@@ -304,7 +317,7 @@
     };
 }
 
-- (XNButton *(^)(NSAttributedString *, UIControlState))attributedString {
+- (XNButton *(^)(NSAttributedString *, UIControlState))buttonAttributedString {
     @weakify(self)
     return ^(NSAttributedString *attributedString, UIControlState state) {
         @strongify(self)
@@ -313,7 +326,7 @@
     };
 }
 
-- (XNButton * _Nonnull (^)(UIFont * _Nonnull))titleFont {
+- (XNButton * _Nonnull (^)(UIFont * _Nonnull))buttonTitleFont {
     @weakify(self)
     return ^(UIFont *font) {
         @strongify(self)
@@ -322,7 +335,7 @@
     };
 }
 
-- (XNButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))image {
+- (XNButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))buttonImage {
     @weakify(self)
     return ^(UIImage *image, UIControlState state) {
         @strongify(self)
@@ -331,7 +344,7 @@
     };
 }
 
-- (XNButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))backgroundImage {
+- (XNButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))buttonBackgroundImage {
     @weakify(self)
     return ^(UIImage *backgroundImage, UIControlState state) {
         @strongify(self)
@@ -340,7 +353,7 @@
     };
 }
 
-- (XNButton * _Nonnull (^)(id _Nonnull, SEL _Nonnull, UIControlEvents))addTargetAction {
+- (XNButton * _Nonnull (^)(id _Nonnull, SEL _Nonnull, UIControlEvents))buttonAddTargetAction {
     @weakify(self)
     return ^(id target, SEL sel, UIControlEvents state) {
         @strongify(self)
@@ -382,7 +395,7 @@
     return button;
 }
 
-- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIControlState))title {
+- (UIButton * _Nonnull (^)(NSString * _Nonnull, UIControlState))buttonTitle {
     @weakify(self)
     return ^(NSString *title, UIControlState state) {
         @strongify(self)
@@ -391,7 +404,7 @@
     };
 }
 
-- (UIButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))titleColor {
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull, UIControlState))buttonTitleColor {
     @weakify(self)
     return ^(UIColor *titleColor, UIControlState state) {
         @strongify(self)
@@ -400,7 +413,7 @@
     };
 }
 
-- (UIButton *(^)(NSAttributedString *, UIControlState))attributedString {
+- (UIButton *(^)(NSAttributedString *, UIControlState))buttonAttributedString {
     @weakify(self)
     return ^(NSAttributedString *attributedString, UIControlState state) {
         @strongify(self)
@@ -409,7 +422,7 @@
     };
 }
 
-- (UIButton * _Nonnull (^)(UIFont * _Nonnull))titleFont {
+- (UIButton * _Nonnull (^)(UIFont * _Nonnull))buttonTitleFont {
     @weakify(self)
     return ^(UIFont *font) {
         @strongify(self)
@@ -418,7 +431,7 @@
     };
 }
 
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))image {
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))buttonImage {
     @weakify(self)
     return ^(UIImage *image, UIControlState state) {
         @strongify(self)
@@ -427,7 +440,7 @@
     };
 }
 
-- (UIButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))backgroundImage {
+- (UIButton * _Nonnull (^)(UIImage * _Nonnull, UIControlState))buttonBackgroundImage {
     @weakify(self)
     return ^(UIImage *backgroundImage, UIControlState state) {
         @strongify(self)
@@ -436,7 +449,7 @@
     };
 }
 
-- (UIButton * _Nonnull (^)(id _Nonnull, SEL _Nonnull, UIControlEvents))addTargetAction {
+- (UIButton * _Nonnull (^)(id _Nonnull, SEL _Nonnull, UIControlEvents))buttonAddTargetAction {
     @weakify(self)
     return ^(id target, SEL sel, UIControlEvents state) {
         @strongify(self)

@@ -20,12 +20,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     XNButton *button = [XNButton new];
-    button.title(@"ssss", UIControlStateNormal).titleFont(MFont(12)).imagePosition(UIRectEdgeTop).titleColor([UIColor whiteColor], UIControlStateNormal).backgroundImage([UIImage imageWithColor:[UIColor grayColor]], UIControlStateNormal);
+//    button.buttonTitle(@"ssss", UIControlStateNormal).buttonTitleFont(MFont(12)).imagePosition(UIRectEdgeTop).titleColor([UIColor whiteColor], UIControlStateNormal).backgroundImage([UIImage imageWithColor:[UIColor grayColor]], UIControlStateNormal);
     button.frame = CGRectMake(100, 100, 100, 100);
     [self.view addSubview:button];
 
     UIButton *btn = [UIButton new];
-    btn.title(@"gg", UIControlStateNormal).titleFont(MFont(16));
+    btn.buttonTitle(@"gg", UIControlStateNormal).buttonTitleFont(MFont(16));
     
 }
 
