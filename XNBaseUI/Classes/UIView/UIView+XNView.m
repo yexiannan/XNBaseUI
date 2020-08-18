@@ -43,7 +43,7 @@ static char badgeImageKey;
 #pragma mark - Set Badge
 
 - (void)clearBadgeAndSendNotificationWithCount:(NSNumber *)count{
-    [self clearBadge];
+    [self xn_clearBadge];
     if (![NSArray arrayIsNull:self.notificationPathArray]) {
         [self.notificationPathArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             //截取NotificationName
@@ -57,7 +57,7 @@ static char badgeImageKey;
 }
 
 
-- (void)clearBadge{
+- (void)xn_clearBadge{
     [self.badgeLabel removeFromSuperview];
     [self.badgeImage removeFromSuperview];
 }
@@ -68,13 +68,13 @@ static char badgeImageKey;
         NSInteger difference = count - [self.badgeCount integerValue];
         
         if (difference == 0) {
-            [self clearBadge];
+            [self xn_clearBadge];
         } else {
             [self clearBadgeAndSendNotificationWithCount:[NSNumber numberWithInteger:difference]];
         }
 
     } else {
-        [self clearBadge];
+        [self xn_clearBadge];
     }
 
     self.badgeCount = [NSNumber numberWithInteger:count];

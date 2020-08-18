@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  清除角标
  */
-- (void)clearBadge;
+- (void)xn_clearBadge;
 /**
  *  count为NSInteger转NSNumber count为改变量 0为全部清除 正数为增量 负数为减量
  */
