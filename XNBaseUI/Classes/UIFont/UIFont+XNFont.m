@@ -11,32 +11,24 @@
 @implementation UIFont (XNFont)
 
 + (instancetype)lightFontWithAutoSize:(CGFloat)size minSize:(CGFloat)minSize MaxSize:(CGFloat)maxSize{
-    CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
-    if ([self deviceSystemMajorVersion] < 9) {
-        return [UIFont fontWithName:@"HelveticaNeue-Light" size:scaleSize];
-    }
-    return [UIFont fontWithName:@"PingFang-SC-Light" size:scaleSize];
+   CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
+   return [UIFont systemFontOfSize:scaleSize weight:UIFontWeightLight];
 }
 
 + (instancetype)mediumFontWithAutoSize:(CGFloat)size minSize:(CGFloat)minSize MaxSize:(CGFloat)maxSize {
-    CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
-    if ([self deviceSystemMajorVersion] < 9) {
-        return [UIFont fontWithName:@"HelveticaNeue-Medium" size:scaleSize];
-    }
-    return [UIFont fontWithName:@"PingFang-SC-Medium" size:scaleSize];
+   CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
+   return [UIFont systemFontOfSize:scaleSize weight:UIFontWeightMedium];
 }
 
 + (instancetype)regularFontWithAutoSize:(CGFloat)size minSize:(CGFloat)minSize MaxSize:(CGFloat)maxSize {
-    CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
-    if ([self deviceSystemMajorVersion] < 9) {
-        return [UIFont fontWithName:@"HelveticaNeue" size:scaleSize];
-    }
-    return [UIFont fontWithName:@"PingFang-SC-Regular" size:scaleSize];
+   CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
+   return [UIFont systemFontOfSize:scaleSize weight:UIFontWeightRegular];
+
 }
 
 + (instancetype)boldFontWithAutoSize:(CGFloat)size minSize:(CGFloat)minSize MaxSize:(CGFloat)maxSize {
-    CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
-    return [UIFont boldSystemFontOfSize:scaleSize];
+   CGFloat scaleSize = [self calculateFontSizeWithSize:size minSize:minSize MaxSize:maxSize];
+   return [UIFont boldSystemFontOfSize:scaleSize];
 }
 
 + (CGFloat)calculateFontSizeWithSize:(CGFloat)size minSize:(CGFloat)minSize MaxSize:(CGFloat)maxSize{
