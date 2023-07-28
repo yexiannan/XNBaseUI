@@ -40,7 +40,7 @@
 }
 
 + (NSData *)imageToDataWithImage:(UIImage *)image MaxDataSizeKBytes:(NSUInteger)size{
-    NSData * data = UIImageJPEGRepresentation(image, 1.0);
+    NSData * data = UIImageJPEGRepresentation(image, 0.99);
     if (!size || size <= 0) {
         return data;
     }
@@ -50,17 +50,6 @@
     if (dataKBytes > size) {
         CGFloat quality = size/dataKBytes;
         data = UIImageJPEGRepresentation(image, quality);
-        UIImage *compressedImage = [UIImage imageWithData:data];
-
-        dataKBytes = data.length/1024.f;
-        quality = 0.9;
-
-        while (dataKBytes > size) {
-            data = UIImageJPEGRepresentation(compressedImage, quality);
-            dataKBytes = data.length/1024.f;
-            quality = quality - 0.01;
-        }
-        
     }
     
     return data;
